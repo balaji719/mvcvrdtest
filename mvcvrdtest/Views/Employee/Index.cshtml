@@ -1,0 +1,28 @@
+﻿@model mvcvrdtest.Models.Employee
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+@using (Html.BeginForm("Index", "Employee", FormMethod.Post))
+{
+    @Html.Label("Enter a name")
+    @Html.TextBoxFor(model => model.Name)
+    <br />
+    @Html.Label("enter a mail")
+    @Html.TextBoxFor(model => model.Email)
+    <br />
+    @Html.Label("Enter a salary")
+    @Html.TextBoxFor(model => model.Salary)
+    <br />
+
+    @Html.Label("enter a Designation")
+    @Html.TextBoxFor(model => model.Designaton)
+    <br />
+
+    <input type="submit" value="AddEmployee" />
+    <br />
+
+    <span>@ViewBag.Message</span>
+}
