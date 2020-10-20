@@ -7,22 +7,56 @@
 
 @using (Html.BeginForm("Index", "Employee", FormMethod.Post))
 {
+    @Html.Label("Enter Id")
+    @Html.TextBoxFor(model => model.Id)
+    <br />
     @Html.Label("Enter a name")
-    @Html.TextBoxFor(model => model.Name)
+    @Html.TextBoxFor(model => model.EmpName)
     <br />
     @Html.Label("enter a mail")
-    @Html.TextBoxFor(model => model.Email)
+    @Html.TextBoxFor(model => model.EmpEmail)
     <br />
     @Html.Label("Enter a salary")
-    @Html.TextBoxFor(model => model.Salary)
+    @Html.TextBoxFor(model => model.EmpSalary)
     <br />
 
     @Html.Label("enter a Designation")
-    @Html.TextBoxFor(model => model.Designaton)
+    @Html.TextBoxFor(model => model.EmpDesignaton)
     <br />
 
-    <input type="submit" value="AddEmployee" />
-    <br />
+    <input type="submit" value="Save" name="b1" />
+    <input type="submit" value="Delete" name="b1" />
+    <input type="submit" value="Update" name="b1" />
 
+    <br />
     <span>@ViewBag.Message</span>
+    <table border="1">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Salary</td>
+            <td>Designaton</td>
+        </tr>
+        @foreach (var item in TempData["ie"] as List<mvcvrdtest.Models.Employee>)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.EmpName</td>
+                <td>@item.EmpEmail</td>
+                <td>@item.EmpSalary</td>
+                <td>@item.EmpDesignaton</td>
+            </tr>
+        }
+    </table>
 }
+@*@using (Html.BeginForm("Index1", "Employee", FormMethod.Post))
+    {
+        @Html.Label("Enter a Emp Id")
+        @Html.TextBoxFor(model => model.Id)
+        <br />
+
+        <input type="submit" value="Delete" />
+        <br />
+        <span>@ViewBag.Message</span>
+    }*@

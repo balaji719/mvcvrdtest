@@ -8,10 +8,10 @@ namespace mvcvrdtest.Models
     public class Employee
     {
         public Int32 Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public double Salary { get; set; }
-        public string Designaton { get; set; }
+        public string EmpName { get; set; }
+        public string EmpEmail { get; set; }
+        public double EmpSalary { get; set; }
+        public string EmpDesignaton { get; set; }
 
     }
 }
